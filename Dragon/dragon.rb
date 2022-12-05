@@ -9,6 +9,19 @@ class Dragon
     @third_head_behaviour = %w[R R R R L L L L F F F F]
   end
 
+  # Cоздаем историю просмотров каждой головы
+  def create_first_head_look_history
+    create_head_history(@first_head_behaviour, 8)
+  end
+
+  def create_second_head_look_history
+    create_head_history(@second_head_behaviour, 9)
+  end
+
+  def create_third_head_look_history
+    create_head_history(@third_head_behaviour, 12)
+  end
+
   # общий метод для создания истории головы
   def create_head_history(behaviour, start_new_head_cycle)
     head_history = []
@@ -23,20 +36,7 @@ class Dragon
     head_history
   end
 
-  # Cоздаем историю просмотров каждой головы
-  def create_first_head_look_history
-    create_head_history(@first_head_behaviour, 8)
-  end
-
-  def create_second_head_look_history
-    create_head_history(@second_head_behaviour, 9)
-  end
-
-  def create_third_head_look_history
-    create_head_history(@third_head_behaviour, 12)
-  end
-
-  #Находим общее время, когда головы смотрят в одну сторону
+  # Находим общее время, когда головы смотрят в одну сторону
   def find_watching_in_one_direction_time_with_all_heads
     p (create_first_head_look_history & create_second_head_look_history & create_third_head_look_history).count * 5
   end
