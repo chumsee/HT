@@ -8,6 +8,5 @@ head1.look(:l, 500)
 head1.look(:f, 11)
 head1.look(:b, 0)
 head1.look(:l, 8)
-p head1.timeline
-p head1.side
+p head1.history
 p head1.minutes
